@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Dropzone from "react-dropzone";
 import FlexBetween from "Components/FlexBetween";
-import { Formik } from "formik";
+// import { Formik } from "formik";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import * as yup from "yup";
+// import * as yup from "yup";
 import FlexEvenly from "Components/FlexEvenly";
 
 const Form = () => {
@@ -84,7 +84,7 @@ const Form = () => {
   const [values, setValues] = useState(
     isLogin ? initialValuesLogin : initialValuesRegister
   );
-  console.log(values);
+  // console.log(values);
   const onChangehandle = (e, name) => {
     let tmpData = e.target === undefined ? e : e.target.value;
     let tmp = {};
@@ -94,7 +94,7 @@ const Form = () => {
   };
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(values);
+    // console.log(values);
     if (isLogin) await login(values);
     if (isRegister) await register(values);
   };
