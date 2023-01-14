@@ -53,7 +53,7 @@ const Form = () => {
     });
     const loggedIn = await loggedInResponse.json();
     alert(loggedIn.mess)
-    if (loggedIn) {
+    if (loggedIn.exist) {
       dispatch(
         setLogin({
           user: loggedIn.user,
@@ -80,6 +80,7 @@ const Form = () => {
     const savedUser = await savedUserResponse.json();
     
     alert(savedUser);
+    navigate('/')
   };
   const [values, setValues] = useState(
     isLogin ? initialValuesLogin : initialValuesRegister

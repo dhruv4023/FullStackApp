@@ -1,0 +1,12 @@
+npm i bcrypt
+npm i body-parser
+npm i cors
+npm i dotenv
+npm i express
+npm i helmet
+npm i jsonwebtoken
+npm i mongoose
+npm i morgan
+npm i multer
+npm i path
+npm i gridfs-stream multer-gridfs-storage

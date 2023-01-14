@@ -68,7 +68,7 @@ export const loginControl = async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRECT);
     delete user.password;
 
-    res.status(200).json({ exist: true, token, user });
+    res.status(200).json({ exist: true, token, user,mess:"Login Successfull !" });
   } catch (error) {
     res.status(500).json({ exist: false, mess: "failed to login" });
   }

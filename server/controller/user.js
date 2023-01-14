@@ -12,7 +12,7 @@ export const getUserFriend = async (req, res) => {
   try {
     const { id } = req.params;
     const user = await User.findById(id);
-    frdList = frdListFun(user);
+    frdList = await frdListFun(user);
     res.status(200).json(frdList);
   } catch (error) {
     res.status(404).json("Can't get data");
