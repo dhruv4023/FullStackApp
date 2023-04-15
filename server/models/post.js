@@ -5,8 +5,6 @@ const postSchema = mongoose.Schema(
     userId: {
       type: String,
       require: true,
-      min: 2,
-      max: 50,
     },
     firstName: {
       type: String,
@@ -16,10 +14,14 @@ const postSchema = mongoose.Schema(
       type: String,
       require: true,
     },
-    picPath: String,
     location: String,
     description: String,
-    likes: { type: Map, of: Boolean },
+    picPath: String,
+    userPicPath: String,
+    likes: {
+      type: Map,
+      of: Boolean,
+    },
     Comments: {
       type: Array,
       default: [],

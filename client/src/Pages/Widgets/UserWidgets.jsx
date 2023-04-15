@@ -19,7 +19,7 @@ const UserWidgets = ({ userId, picturePath }) => {
   const [user, setUser] = useState(null);
   const theme = useTheme();
   // console.log(palette)
-  console.log();
+  // console.log(picturePath);
   // const navigate = useNavigate();
   const token = useSelector((s) => s.token);
   const dark = theme.palette.neutral.dark;

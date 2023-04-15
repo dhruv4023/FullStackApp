@@ -6,6 +6,7 @@ export const getUsers = async (req, res) => {
     res.status(200).json(user);
   } catch (error) {
     res.status(404).json("Cann't get data");
+    console.log("erro")
   }
 };
 export const getUserFriend = async (req, res) => {
@@ -15,10 +16,12 @@ export const getUserFriend = async (req, res) => {
     frdList = await frdListFun(user);
     res.status(200).json(frdList);
   } catch (error) {
+    console.log("erro")
     res.status(404).json("Can't get data");
   }
 };
 export const addRemoveFriend = async (req, res) => {
+  console.log(re.body)
   try {
     const { id, frdId } = req.params;
     const user = await User.findById(id);

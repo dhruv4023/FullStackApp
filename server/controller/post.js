@@ -1,23 +1,30 @@
+import { deleteFile } from "../helper/fileDirOperations.js";
 import Post from "../models/post.js";
 import User from "../models/user.js";
 export const createPostControl = async (req, res) => {
+  console.log(req.body);
   try {
-    const { userId, description, picPath } = req.body;
+    const { userId, description, picturePath } = req.body;
     const user = await User.findById(userId);
+    // console.log(user)
     const newPost = new Post({
-      userId,
+      userId:userId,
       firstName: user.firstName,
       lastName: user.lastName,
-      picPath,
+      userPicPath: user.picPath,
       location: user.location,
+      picPath: picturePath,
       description,
-      likes,
-      Comments,
+      likes:{},
+      Comments:[],
     });
+    // console.log(newPost)
     await newPost.save();
     const posts = await Post.find();
+
     res.status(201).json(posts);
   } catch (error) {
+    deleteFile("public/assets/" + req.body.picturePath);
     res.status(409).json();
   }
 };

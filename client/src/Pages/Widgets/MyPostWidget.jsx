@@ -37,9 +37,6 @@ const MyPostWidget = ({ picturePath }) => {
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const mediumMain = palette.neutral.mediumMain;
   const medium = palette.neutral.medium;
-  useEffect(() => {
-    handlePost(_id, post, image, setPost, dispatch, setImage, token);
-  }, []);
 
   return (
     <WidgetWrapper m={isNonMobileScreens && "0 2rem"}>
@@ -138,10 +135,12 @@ const MyPostWidget = ({ picturePath }) => {
         )}
         <Button
           disabled={!post}
-          onClick={handlePost}
+          onClick={() =>
+            handlePost(_id, post, image, setPost, dispatch, setImage, token)
+          }
           sx={{
             color: palette.background.alt,
-            background: palette.background.main,
+            backgroundColor: palette.primary.main,
             borderRadius: "3rem",
           }}
         >

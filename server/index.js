@@ -52,8 +52,7 @@ mongoose
     console.log("db not connected");
   });
   
-
-  import fs from 'fs'
+  // import fs from 'fs'
   // // fs.rename('./post4.jpeg','./post',cb)
   // // console.log()
   // fs.mkdirSync('./xy')
